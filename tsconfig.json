@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+      "allowJs": true,
+      "target": "esnext",
+      "module": "esnext",
+      "strict": true,
+      "importHelpers": true,
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "skipLibCheck": true,
+      "baseUrl": ".",
+      "types": [
+        "jest",
+        "node",
+      ],
+      "lib": [
+        "esnext",
+        "DOM",
+        "DOM.Iterable",
+        "scripthost",
+      ],
+    },
+    "include": [
+      "src/**/*.ts",
+      "tests/**/*.ts",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+
