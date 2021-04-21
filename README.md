@@ -1,5 +1,5 @@
 ### Vife - Vue Inspector Force Enabler
-> ⚙ A simple util to swiftly enable Vue inspector in non-developing environment
+> ⚙ A simple util to swiftly enable Vue inspector in non-developing environment, 1.02kb gzipped+minified!
 
 Vife (pronunced as /vif/) is a simple util for VueInspector which aims to provide a smoother develop experience at non-developing (aka. production, testing) environment.It enables VueInspector `OnNeeded` in runtime to avoid bringing performance overhead while you're not debugging.
 
