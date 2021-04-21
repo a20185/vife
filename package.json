@@ -1,5 +1,5 @@
 {
-  "name": "vife",
+  "name": "@nibfe/vife",
   "version": "0.0.1",
   "description": "⚙ A simple util to force enable vue inspector",
   "main": "dist/index.common.js",

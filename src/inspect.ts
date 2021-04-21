@@ -1,3 +1,5 @@
+import { notice } from "./lib"
+
 export type AnyFunction = (...args: any[]) => any
 export type RecursiveCtor = {
     config?: any
@@ -31,7 +33,7 @@ export const forceEnable = (
         ? document.querySelector(domElementOrSelector)
         : domElementOrSelector) as MaybeVueElement
     if (!element) {
-        console.log('❌ 错误：没有找到指定的 DOM 节点，请传入 Vue 组件挂载的根节点或者根元素！')
+        notice('ERROR_NO_ROOT_EL')
         return false
     }
     /** 改id为子项目的id或者加载元素 */
@@ -55,11 +57,11 @@ export const forceEnable = (
             // 此为微前端根项目节点的id
             if (mfeRootEl) {
                 mfeRootEl.__vue__ = undefined
-                console.log('Vue Devtools 开启成功 o(￣▽￣)ｄ，打开 VueInspectTool 查看一下吧~')
+                notice('SUCCESS_ENABLED')
             }
         },1000);
     }
-    console.log('Vue Devtools 开启成功 o(￣▽￣)ｄ，打开 VueInspectTool 查看一下吧~')
+    notice('SUCCESS_ENABLED')
 }
 
 /**
@@ -78,6 +80,9 @@ export const createForceEnabler = (
     const authorize = configOptions?.authorize ?? (() => Promise.resolve(true))
     return async () => {
         const authorizeResult = await authorize()
-        return authorizeResult && forceEnable(domElementOrSelector, microFrontendRootSelector)
+        if (!authorizeResult) {
+            return notice('ERROR_NO_PERMISSION')
+        }
+        return forceEnable(domElementOrSelector, microFrontendRootSelector)
     }
 }

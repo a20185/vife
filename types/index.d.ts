@@ -30,7 +30,16 @@ declare const forceEnable: (domElementOrSelector?: HTMLElement | string, microFr
  * @param {EnablerOptions} configOptions Configurations
  * @returns {AsyncFunction} enabler
  */
-declare const createForceEnabler: (domElementOrSelector?: string, microFrontendRootSelector?: string, configOptions?: EnablerOptions) => () => Promise<false | NodeJS.Timeout | undefined>;
+declare const createForceEnabler: (domElementOrSelector?: string, microFrontendRootSelector?: string, configOptions?: EnablerOptions) => () => Promise<false | void | NodeJS.Timeout>;
+
+interface SetupOptions {
+    isVerbose: boolean;
+}
+/**
+ * Util for setup VIFE running env
+ * @param {Partial<SetupOptions>} param
+ */
+declare const setup: (param: Partial<SetupOptions>) => void;
 
 export default createForceEnabler;
-export { AnyFunction, EnablerOptions, MaybeVueElement, RecursiveCtor, createForceEnabler, forceEnable };
+export { AnyFunction, EnablerOptions, MaybeVueElement, RecursiveCtor, createForceEnabler, forceEnable, setup };
