@@ -6,3 +6,4 @@ test.js
 dist
 dist/*
 dist/**/*
+changecommit.sh
