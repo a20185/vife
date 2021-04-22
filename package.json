@@ -1,6 +1,6 @@
 {
   "name": "vife",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "⚙ A simple util to force enable vue inspector",
   "main": "dist/index.common.js",
   "module": "dist/index.esm.js",
